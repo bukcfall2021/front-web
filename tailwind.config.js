@@ -4,8 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'lime-green': '#39DB4A' 
-      }
+        "lime-green": "#39DB4A",
+      },
+      fontFamily: {
+        body: ["Poppins"],
+        inter: ["inter"],
+      },
     },
   },
   plugins: [],

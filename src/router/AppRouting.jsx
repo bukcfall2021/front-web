@@ -1,17 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "../pages/home";
-import Navbar from "../components/Navbar";
-import Menu from "../pages/Menu/Menu";
+import Signup from "../pages/SignupLogin/Signup";
+import Login from "../pages/SignupLogin/Login";
 
 const AppRouting = () => {
   return (
-    <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route path="/Menu" element={<Menu/>} />
-      </Routes>
-    </BrowserRouter>
+<Signup/>
+//<Login/>
   );
 };
 
