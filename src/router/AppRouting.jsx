@@ -9,7 +9,6 @@ const AppRouting = () => {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<HomePage />} />
-
         <Route path={RouteNames.LOG_IN} element={<LoginPage />} />
         <Route path={RouteNames.SIGN_UP} element={<SignupPage />} />
       </Routes>

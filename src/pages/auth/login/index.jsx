@@ -4,6 +4,7 @@ import RectangleImage from "/assets/Auth-Page/rectangle.png";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import RouteNames from "../../../router/RouteNames";
+import InputField from "../../../components/InputField";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -34,42 +35,34 @@ const LoginPage = () => {
             <p className="text-sm leading-5 py-4">Become a member and enjoy exclusive deals and discounts.</p>
           </div>
 
-          <label for="email" className="text-sm py-2 font-inter text-[#696F79]">
-            Email Address
-          </label>
-          <input
-            autoFocus
+          <InputField
+            title={"Email Address"}
             id="email"
             type="text"
-            className=" border-[#c2bebe] border-2 rounded h-10 p-1 focus:outline-none"
-            required
+            autoFocus={true}
+            required={true}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <label htmlFor="password" className="text-sm py-2 font-inter text-[#696F79]">
-            Password
-          </label>
-          <div className="text-sm relative border-[#c2bebe] border-2 rounded h-10 px-1 py-2 ">
-            <input
-              id="password"
-              type={showPassword ? "text" : "password"}
-              className="focus:outline-none w-[95%]"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button
-              type="button"
-              className="absolute inset-y-0 right-0 flex items-center px-2"
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
-            </button>
-          </div>
+
+          <InputField
+            title={"Password"}
+            id="password"
+            type={showPassword ? "text" : "password"}
+            autoFocus={true}
+            required={true}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            rightIcon={
+              <button type="button" className="" onClick={togglePasswordVisibility}>
+                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              </button>
+            }
+          />
+
           <div className="flex gap-2 pt-3">
             <input type="checkbox" id="remember" className="checked:accent-primary" />
             <label for="remember" className="text-sm text-[#696F79] ">
-              {" "}
               Remember me
             </label>
           </div>
@@ -79,7 +72,6 @@ const LoginPage = () => {
           <p className="text-sm py-3 cursor-pointer">
             Don't have an account?
             <Link to={RouteNames.SIGN_UP}>
-              {" "}
               <span className="text-primary"> Sign up here!</span>
             </Link>
           </p>
