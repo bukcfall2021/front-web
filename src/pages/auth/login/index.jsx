@@ -5,6 +5,7 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import RouteNames from "../../../router/RouteNames";
 import InputField from "../../../components/InputField";
+import AuthPagesSideView from "../../../components/AuthPagesSideView";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -21,13 +22,7 @@ const LoginPage = () => {
 
   return (
     <div className="flex overflow-y-hidden">
-      <div className="hidden md:block relative h-[100vh] w-[45%] bg-primary overflow-hidden ">
-        <img
-          src={RectangleImage}
-          className=" relative sm:top-80 lg:top-52 w-[30rem] lg:w-[40rem] sm:h-[30rem] "
-        />
-        <img className=" absolute  bottom-0 z-10 h-[30rem] lg:h-[40rem]" src={ChefImage} />
-      </div>
+      <AuthPagesSideView />
       <form className="flex flex-col py-28 " onsubmit={handleLogin}>
         <div className="flex flex-col px-24 xl:px-64  ">
           <div className="font-inter">
