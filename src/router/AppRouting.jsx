@@ -4,8 +4,15 @@ import Login from "../pages/SignupLogin/Login";
 
 const AppRouting = () => {
   return (
-<Signup/>
-//<Login/>
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+        <Route path="/Menu" element={<Menu/>} />
+        <Route exact path="/Signup" element={<Signup/>} />
+        <Route exact path="/Login" element={<Login/>} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
