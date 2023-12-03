@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Signup from "../pages/SignupLogin/Signup";
 import Login from "../pages/SignupLogin/Login";
+import HomePage from "../pages/home";
+import Navbar from "../components/Navbar";
 
 const AppRouting = () => {
   return (
