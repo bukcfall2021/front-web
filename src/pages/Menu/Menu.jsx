@@ -1,10 +1,11 @@
+
 import React,{useEffect, useState} from 'react'
 import './Menu.css'
 import Cards from '../../components/Cards';
 import Button from '../../components/Button';
 const Menu = () => {
-    const [menu,setMenu]=useState([]);
-    const [category,setCategory]=useState('pizza')
+  const [menu, setMenu] = useState([]);
+  const [category, setCategory] = useState("pizza");
 
     // useEffect(()=>{
     //     axios.get('').then((response)=>setMenu(response.data))
@@ -46,7 +47,7 @@ const Menu = () => {
             </div>
         </div>
     </div>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;
