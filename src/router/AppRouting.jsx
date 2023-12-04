@@ -21,7 +21,7 @@ const AppRouting = () => {
         {/* LoggedIn pages */}
 
         {/* Restaurant Pages  */}
-        <Route path={RouteNames.MENU} element={<MenuPage />} />
+        <Route path={`${RouteNames.MENU}/:id`} element={<MenuPage />} />
       </Routes>
     </BrowserRouter>
   );
