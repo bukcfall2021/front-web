@@ -5,6 +5,8 @@ import RouteNames from "./RouteNames";
 import HomePage from "../pages/home";
 import MenuPage from "../pages/Menu/Menu";
 import { useState } from "react";
+import Navbar from "../components/Navbar";
+import AppLayout from "../layout/AppLayout";
 
 const AppRouting = () => {
   const [user, setUser] = useState(null);
@@ -12,7 +14,8 @@ const AppRouting = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
+        <Route path="/" element={<Navigate to={RouteNames.HOME} />} />
+
         {/* Auth Pages */}
         <Route path="/" element={user ? <Navigate to={RouteNames.MENU} /> : <Outlet />}>
           <Route path={RouteNames.LOG_IN} element={<LoginPage />} />
@@ -21,7 +24,10 @@ const AppRouting = () => {
         {/* LoggedIn pages */}
 
         {/* Restaurant Pages  */}
-        <Route path={`${RouteNames.MENU}/:id`} element={<MenuPage />} />
+        <Route path="/" element={<AppLayout />}>
+          <Route path={RouteNames.HOME} element={<HomePage />} />
+          <Route path={`${RouteNames.MENU}/:id`} element={<MenuPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

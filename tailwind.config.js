@@ -5,6 +5,8 @@ export default {
     extend: {
       colors: {
         primary: "#E79315",
+        "half-white": "#fafafa",
+        "transparent-gray": "rgba(177, 177, 177, 0.8)",
       },
       fontFamily: {
         body: ["Poppins"],
