@@ -23,8 +23,7 @@ const options = [
   },
 ];
 
-const Navbar = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
+const Navbar = ({ isCartOpen, setIsCartOpen }) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   return (
@@ -97,8 +96,6 @@ const Navbar = () => {
           </DropDown>
         </div>
       </nav>
-
-      <CartModal isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
     </>
   );
 };

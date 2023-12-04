@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Modal from "react-modal";
+import useScrollController from "../../hooks/useScrollController";
 
 const BottomSheet = ({ children, isOpen, setOpen }) => {
   const onClose = () => {
@@ -28,11 +29,13 @@ const BottomSheet = ({ children, isOpen, setOpen }) => {
     };
   }, [isOpen, onClose]);
 
+  useScrollController(!isOpen);
+
   return (
     <Modal
       isOpen={isOpen}
       overlayClassName="overlay"
-      className="animate-slide-up h-[85vh] w-full p-4 bottom-0 absolute bg-half-white rounded-t-[60px]"
+      className=" shadow border-[1px] border-slate-100 max-w-[1024px] h-[85vh] w-full p-4 bottom-0 absolute bg-half-white rounded-t-[60px] left-[50%] translate-x-[-50%] animate-slide-up"
       closeTimeoutMS={300}
       ariaHideApp={false}
     >
