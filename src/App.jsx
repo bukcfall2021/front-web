@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import AppRouting from "./router/AppRouting";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
-  return <AppRouting />;
+  return (
+    <>
+      <Toaster />
+      <AppRouting />
+    </>
+  );
 };
 
 export default App;

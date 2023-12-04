@@ -3,8 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modal */
-.modal {
+/* extra animations */
+.animate-slide-up {
   transition: bottom 10s ease-in-out, transform 5s ease-in-out;
   animation: bounce 0.9s ease-in-out;
 }
