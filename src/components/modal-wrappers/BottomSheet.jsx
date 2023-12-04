@@ -35,11 +35,17 @@ const BottomSheet = ({ children, isOpen, setOpen }) => {
     <Modal
       isOpen={isOpen}
       overlayClassName="overlay"
-      className=" shadow border-[1px] border-slate-100 max-w-[1024px] h-[85vh] w-full p-4 bottom-0 absolute bg-half-white rounded-t-[60px] left-[50%] translate-x-[-50%] animate-slide-up"
+      className={`h-[85vh] w-full flex justify-center bottom-0 absolute  ${
+        isOpen ? "animate-slide-up" : "animate-slide-down"
+      }`}
       closeTimeoutMS={300}
       ariaHideApp={false}
     >
-      <div className="overflow-y-auto w-full h-full " ref={modalRef}>
+      <div
+        ref={modalRef}
+        className="flex flex-col items-center bg-white rounded-t-[60px] max-w-[1024px] overflow-y-auto p-4 overflow-hidden border-slate-100 w-full shadow border-[1px]"
+      >
+        <div className="h-1 w-16 bg-gray-300 rounded-full fixed" />
         {children}
       </div>
     </Modal>
