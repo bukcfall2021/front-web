@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { LuSearch } from "react-icons/lu";
 import { RxCross2 } from "react-icons/rx";
-import CartModal from "./modals/CartModal";
 import { useState } from "react";
 import RouteNames from "../router/RouteNames";
 import { IoMenu, IoCartOutline } from "react-icons/io5";
@@ -15,7 +14,7 @@ const options = [
   },
   {
     name: "Categories",
-    url: "",
+    url: "/categories",
   },
   {
     name: "Menu",
@@ -25,6 +24,8 @@ const options = [
 
 const Navbar = ({ isCartOpen, setIsCartOpen }) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  const location = useLocation();
 
   return (
     <>
@@ -72,7 +73,10 @@ const Navbar = ({ isCartOpen, setIsCartOpen }) => {
                 <li key={item.url}>
                   <Link
                     to={item.url}
-                    className="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary "
+                    className={`block py-2 px-3 md:p-0  rounded hover:bg-gray-100 
+                            md:hover:bg-transparent md:hover:text-primary ${
+                              location.pathname.includes(item.url) ? "text-primary" : "text-black"
+                            }`}
                   >
                     {item.name}
                   </Link>

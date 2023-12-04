@@ -13,7 +13,7 @@ const AppRouting = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to={RouteNames.HOME} />} />
+        <Route path="/" element={<Navigate to={RouteNames.MENU + "/*"} />} />
 
         {/* Auth Pages */}
         <Route path="/" element={user ? <Navigate to={RouteNames.MENU} /> : <Outlet />}>
