@@ -6,7 +6,7 @@ import Cart from "./pages/Modal/Cart.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-     <App /> 
-    {/* <Cart/> */}
+    {/* <App />  */}
+    <Cart />
   </React.StrictMode>
 );

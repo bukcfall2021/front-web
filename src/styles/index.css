@@ -1,4 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Nova+Round&family=Poppins:wght@100;300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Nova+Round&family=Poppins:wght@100;300&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Modal */
+.modal {
+  transition: bottom 10s ease-in-out, transform 5s ease-in-out;
+  animation: bounce 0.9s ease-in-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

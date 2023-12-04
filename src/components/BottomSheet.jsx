@@ -1,5 +1,5 @@
-import React from "react";
-import Sheet from "react-modal-sheet";
+import React, { useEffect, useRef } from "react";
+import Modal from "react-modal";
 
 const BottomSheet = ({ children, isOpen, setOpen }) => {
   const onClose = () => {
@@ -8,14 +8,38 @@ const BottomSheet = ({ children, isOpen, setOpen }) => {
     }
   };
 
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
   return (
-    <Sheet isOpen={isOpen} onClose={onClose}>
-      <Sheet.Container>
-        <Sheet.Header />
-        <Sheet.Content>{children}</Sheet.Content>
-      </Sheet.Container>
-      <Sheet.Backdrop />
-    </Sheet>
+    <Modal
+      isOpen={isOpen}
+      overlayClassName="overlay"
+      className="animate-slide-up h-[85vh] w-full p-4 bottom-0 absolute bg-half-white rounded-t-[60px]"
+      closeTimeoutMS={300}
+      ariaHideApp={false}
+    >
+      <div className="overflow-y-auto w-full h-full " ref={modalRef}>
+        {children}
+      </div>
+    </Modal>
   );
 };
 
