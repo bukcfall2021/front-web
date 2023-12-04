@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
-import img5 from '../assets/burgers/burger1.png'
-
+import img5 from "/assets/burgers/burger1.png";
 
 const Cards = ({ item }) => {
   const [isHeartFilled, setIsHeartFilled] = useState(false);
@@ -28,8 +27,13 @@ const Cards = ({ item }) => {
         </figure>
       </Link>
       <div className=" mx-6">
-        <Link to={`/menu/item1`}><h1 className="font-bold text-lg">pizza1</h1></Link>
-        <p className="truncate">Lorem ipsum dolor sit amet loribus amet velit Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, rerum quasi, molestiae at explicabo debitis nam, delectus quia temporibus vel amet.</p>
+        <Link to={`/menu/item1`}>
+          <h1 className="font-bold text-lg">pizza1</h1>
+        </Link>
+        <p className="truncate">
+          Lorem ipsum dolor sit amet loribus amet velit Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit. Minus, rerum quasi, molestiae at explicabo debitis nam, delectus quia temporibus vel amet.
+        </p>
         <div className="flex justify-between items-center mb-2">
           <h5 className="font-semibold ">
             <span className="text-sm text-red-500">$ </span> 50
