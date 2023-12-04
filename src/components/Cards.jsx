@@ -20,7 +20,7 @@ const Cards = ({ item }) => {
       className="w-full h-full  shadow-lg relative  rounded-3xl bg-white "
     >
       <div
-        className={`rating gap-1 absolute right-0 rounded-bl-3xl top-0 p-3 h-6/7 heartStar bg-green-500 rounded-tr-3xl ${
+        className={`rating gap-1 absolute right-0 rounded-bl-3xl top-0 p-3 h-6/7 heartStar bg-primary rounded-tr-3xl ${
           isHeartFilled ? "text-red-500" : "text-white"
         }`}
         onClick={handleHeartClick}
