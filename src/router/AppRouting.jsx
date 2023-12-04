@@ -3,9 +3,8 @@ import LoginPage from "../pages/auth/login";
 import SignupPage from "../pages/auth/signup";
 import RouteNames from "./RouteNames";
 import HomePage from "../pages/home";
-import MenuPage from "../pages/Menu/Menu";
+import MenuPage from "../pages/menu";
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 import AppLayout from "../layout/AppLayout";
 
 const AppRouting = () => {
