@@ -55,7 +55,7 @@ const ProductModal = ({ id, open, setOpen }) => {
               <ExtrasCard key={index} />
             ))}
         </div>
-        <div className="w-full flex flex-row">
+        <div className="w-full m-5 flex flex-row">
           <div className="flex flex-row gap-6  items-center text-5xl text-green mr-5">
             <Hover icon={IoIosArrowBack} onClick={decrementCounter} />
             <span
