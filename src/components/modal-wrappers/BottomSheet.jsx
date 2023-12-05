@@ -35,7 +35,7 @@ const BottomSheet = ({ children, isOpen, setOpen }) => {
     <Modal
       isOpen={isOpen}
       overlayClassName="overlay"
-      className={`h-[85vh] w-full flex justify-center bottom-0 absolute  ${
+      className={`h-[85vh] w-full flex justify-center bottom-0 fixed  ${
         isOpen ? "animate-slide-up" : "animate-slide-down"
       }`}
       closeTimeoutMS={300}
