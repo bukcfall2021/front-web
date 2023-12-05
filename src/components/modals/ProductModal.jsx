@@ -28,7 +28,7 @@ const ProductModal = ({ id, open, setOpen }) => {
             <img src={img5} />
           </div>
           <div className="flex-[.7]">
-            <h1>Name</h1>
+            <h1 className="text-4xl font-bold ">Name</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est vitae iusto ipsum quas!
               Voluptatem dolore reiciendis minus vel temporibus, mollitia vitae ut ducimus incidunt id
@@ -45,10 +45,10 @@ const ProductModal = ({ id, open, setOpen }) => {
             </div>
           </div>
         </div>
-        <div>
-          <h1>Extras</h1>
+        <div className="p-10">
+          <h1 className="text-3xl font-bold " >Extras</h1>
         </div>
-        <div className="w-full grid md:grid-cols-3 grid-cols-2 gap-3 md:gap-5">
+        <div className="w-full grid md:grid-cols-4 grid-cols-2 gap-3 md:gap-10">
           {Array(4)
             .fill(null)
             .map((item, index) => (
