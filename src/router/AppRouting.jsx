@@ -6,6 +6,7 @@ import HomePage from "../pages/home";
 import MenuPage from "../pages/menu";
 import { useState } from "react";
 import AppLayout from "../layout/AppLayout";
+import UserProfilePage from "../pages/user-profile";
 
 const AppRouting = () => {
   const [user, setUser] = useState(null);
@@ -26,6 +27,7 @@ const AppRouting = () => {
         <Route path="/" element={<AppLayout />}>
           <Route path={RouteNames.HOME} element={<HomePage />} />
           <Route path={`${RouteNames.MENU}/:id`} element={<MenuPage />} />
+          <Route path={`/user`} element={<UserProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
