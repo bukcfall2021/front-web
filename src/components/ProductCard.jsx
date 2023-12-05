@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import img5 from "/assets/burgers/burger1.png";
 
-const Cards = ({ item }) => {
+const ProductCard = ({ item }) => {
   const [isHeartFilled, setIsHeartFilled] = useState(false);
 
   const handleHeartClick = () => {
@@ -54,4 +54,4 @@ const Cards = ({ item }) => {
   );
 };
 
-export default Cards;
+export default ProductCard;
