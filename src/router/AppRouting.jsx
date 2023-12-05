@@ -6,7 +6,6 @@ import HomePage from "../pages/home";
 import MenuPage from "../pages/menu";
 import { useState } from "react";
 import AppLayout from "../layout/AppLayout";
-import ProductDetails from "../pages/item-details";
 
 const AppRouting = () => {
   const [user, setUser] = useState(null);
@@ -26,8 +25,7 @@ const AppRouting = () => {
         {/* Restaurant Pages  */}
         <Route path="/" element={<AppLayout />}>
           <Route path={RouteNames.HOME} element={<HomePage />} />
-          <Route path={`${RouteNames.MENU}`} element={<MenuPage />} />
-          <Route path={`${RouteNames.MENU}/:id`} element={<ProductDetails />} />
+          <Route path={`${RouteNames.MENU}/:id`} element={<MenuPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
