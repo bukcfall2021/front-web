@@ -14,7 +14,7 @@ const ExtrasCard = ({ item }) => {
   return (
     <div
       style={{
-        aspectRatio: 3.5 / 4,
+        aspectRatio: 3.75 / 4,
       }}
       to={`/menu/item1`}
       className="w-full h-full  shadow-lg relative  rounded-3xl bg-white "
