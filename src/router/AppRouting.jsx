@@ -27,7 +27,7 @@ const AppRouting = () => {
         <Route path="/" element={<AppLayout />}>
           <Route path={RouteNames.HOME} element={<HomePage />} />
           <Route path={`${RouteNames.MENU}/:id`} element={<MenuPage />} />
-          <Route path={`/user`} element={<UserProfilePage />} />
+          <Route path={RouteNames.PROFILE} element={<UserProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
