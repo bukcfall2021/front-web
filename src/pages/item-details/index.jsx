@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import Cards from "../../components/Cards";
-import Button from "../../components/Button";
 import RouteNames from "../../router/RouteNames";
 import img5 from "/assets/Pizzas/pizza2.png";
 import { FaStar } from "react-icons/fa";
@@ -9,72 +7,84 @@ import ExtrasCard from "../../components/ExtrasCard";
 import Hover from "../../components/Hover";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-const ProductDetails = () => {
-    const { id } = useParams();
-    const [load, setLoad] = useState(false);
-    const navigate = useNavigate()
-    if (!id) navigate(RouteNames.MENU)
-    useEffect(() => {
-        setLoad(true);
-    });
+const ProductDetails = ({ id }) => {
+  const [load, setLoad] = useState(false);
+  const navigate = useNavigate();
 
-    const [counter, setCounter] = useState(0);
+  useEffect(() => {
+    setLoad(true);
+  });
 
-    const incrementCounter = () => {
-        setCounter(counter + 1);
-    };
+  const [counter, setCounter] = useState(0);
 
-    const decrementCounter = () => {
-        if (counter > 0) {
-            setCounter(counter - 1);
-        }
-    };
+  const incrementCounter = () => {
+    setCounter(counter + 1);
+  };
 
-    return load ? (
-        <div className="w-full">
-            <div className="flex flex-row justify-center items-center">
-                <div className="flex-[.3] p-5">
-                    <img src={img5} />
-                </div>
-                <div className="flex-[.7]">
-                    <h1>Name</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est vitae iusto ipsum quas! Voluptatem dolore reiciendis minus vel temporibus, mollitia vitae ut ducimus incidunt id provident neque ab voluptatum.</p>
-                    <div className="flex justify-between items-center mb-2">
-                        <h5 className="font-semibold ">
-                            <span className="text-sm text-red-500">$ </span> 50
-                        </h5>
-                        <div className="w-10 h-10 flex justify-between items-center">
-                            <FaStar className="text-yellow-500 " />
-                            4.5
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h1>Extras</h1>
-            </div>
-            <div className="w-full grid md:grid-cols-3 grid-cols-2 gap-3 md:gap-5">
-                {Array(4)
-                    .fill(null)
-                    .map((item, index) => (
-                        <ExtrasCard key={index} />
-                    ))}
-            </div>
-            <div className="w-full flex flex-row">
-                <div className="flex flex-row gap-6  items-center text-5xl text-green mr-5">
-                    <Hover icon={IoIosArrowBack} onClick={decrementCounter} />
-                    <span className=' w-24 h-12 rounded-full text-white text-xl flex justify-center items-center ' style={{ backgroundColor: '#39DB4A' }} >{counter}</span>
-                    <Hover icon={IoIosArrowForward} onClick={incrementCounter} />
-                </div>
-                <div className="grow flex flex-row justify-center items-center" >
-                    <span className=' w-[80%] p-5 h-12 rounded-full text-white text-xl flex justify-center items-center ' style={{ backgroundColor: '#39DB4A' }} >Add to cart</span>
+  const decrementCounter = () => {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
+  };
 
-                </div>
-            </div>
+  return load ? (
+    <div className="w-full">
+      <div className="flex flex-row justify-center items-center">
+        <div className="flex-[.3] p-5">
+          <img src={img5} />
         </div>
-    ) : (
-        <div>Loading...</div>
-    );
+        <div className="flex-[.7]">
+          <h1>Name</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse est vitae iusto ipsum quas!
+            Voluptatem dolore reiciendis minus vel temporibus, mollitia vitae ut ducimus incidunt id provident
+            neque ab voluptatum.
+          </p>
+          <div className="flex justify-between items-center mb-2">
+            <h5 className="font-semibold ">
+              <span className="text-sm text-red-500">$ </span> 50
+            </h5>
+            <div className="w-10 h-10 flex justify-between items-center">
+              <FaStar className="text-yellow-500 " />
+              4.5
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h1>Extras</h1>
+      </div>
+      <div className="w-full grid md:grid-cols-3 grid-cols-2 gap-3 md:gap-5">
+        {Array(4)
+          .fill(null)
+          .map((item, index) => (
+            <ExtrasCard key={index} />
+          ))}
+      </div>
+      <div className="w-full flex flex-row">
+        <div className="flex flex-row gap-6  items-center text-5xl text-green mr-5">
+          <Hover icon={IoIosArrowBack} onClick={decrementCounter} />
+          <span
+            className=" w-24 h-12 rounded-full text-white text-xl flex justify-center items-center "
+            style={{ backgroundColor: "#39DB4A" }}
+          >
+            {counter}
+          </span>
+          <Hover icon={IoIosArrowForward} onClick={incrementCounter} />
+        </div>
+        <div className="grow flex flex-row justify-center items-center">
+          <span
+            className=" w-[80%] p-5 h-12 rounded-full text-white text-xl flex justify-center items-center "
+            style={{ backgroundColor: "#39DB4A" }}
+          >
+            Add to cart
+          </span>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div>Loading...</div>
+  );
 };
 
 export default ProductDetails;
