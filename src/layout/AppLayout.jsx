@@ -13,7 +13,6 @@ const AppLayout = () => {
         <Navbar isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
         <Outlet />
         <Footer />
-
         <CartModal isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
       </div>
     </div>
