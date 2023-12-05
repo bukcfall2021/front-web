@@ -14,7 +14,7 @@ const MenuPage = () => {
   return load ? (
     <div className="w-full">
       <div className="py-4 flex justify-between items-center">
-        <h1 className="text-3xl font-bold text-primary">{id == "*" ? "Menu" : id}</h1>
+        <h1 className="text-3xl font-bold text-primary">Menu</h1>
         <div className="w-28 h-10">
           <Button />
         </div>
