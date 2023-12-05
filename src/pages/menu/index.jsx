@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Cards from "../../components/Cards";
-import Button from "../../components/Button";
+import ProductCard from "../../components/ProductCard";
+import Button from "../../components/ToggleButton";
+import ProductModal from "../../components/modals/ProductModal";
 
 const MenuPage = () => {
   const { id } = useParams();
   const [load, setLoad] = useState(false);
+  const [productModelOpen, setProductModalOpen] = useState(false);
 
   useEffect(() => {
     setLoad(true);
@@ -23,9 +25,11 @@ const MenuPage = () => {
         {Array(10)
           .fill(null)
           .map((item, index) => (
-            <Cards key={index} />
+            <ProductCard key={index} onClick={() => setProductModalOpen(true)} />
           ))}
       </div>
+
+      <ProductModal open={productModelOpen} setOpen={setProductModalOpen} />
     </div>
   ) : (
     <div>Loading...</div>

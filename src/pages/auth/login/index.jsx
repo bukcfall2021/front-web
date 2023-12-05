@@ -62,7 +62,7 @@ const LoginPage = () => {
             </label>
           </div>
           <button className="rounded font-inter p-2 text-center w-full mt-4 bg-primary text-white">
-            Register account
+            Log in
           </button>
           <p className="text-sm py-3 cursor-pointer">
             Don't have an account?

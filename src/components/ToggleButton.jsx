@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-const Button = () => {
+
+const ToggleButton = () => {
   return (
     <div className="flex justify-between items-center m-auto">
-      <div className="w-10 h-10 rounded-full bg-gray-200 flex  items-center">
+      <div className={`w-10 h-10 rounded-full flex items-center bg-gray-200`}>
         <IoIosArrowBack className="mx-auto" />
       </div>
-      <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center">
+      <div className={`w-10 h-10 rounded-full flex items-center bg-gray-200`}>
         <IoIosArrowForward className="mx-auto" />
       </div>
     </div>
   );
 };
 
-export default Button;
+export default ToggleButton;

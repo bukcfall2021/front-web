@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import img5 from "/assets/burgers/burger1.png";
 
-const Cards = ({ item }) => {
+const ProductCard = ({ item, onClick }) => {
   const [isHeartFilled, setIsHeartFilled] = useState(false);
 
   const handleHeartClick = () => {
@@ -16,7 +16,7 @@ const Cards = ({ item }) => {
       style={{
         aspectRatio: 3.5 / 4,
       }}
-      to={`/menu/item1`}
+      onClick={onClick}
       className="w-full h-full  shadow-lg relative  rounded-3xl bg-white "
     >
       <div
@@ -54,4 +54,4 @@ const Cards = ({ item }) => {
   );
 };
 
-export default Cards;
+export default ProductCard;
