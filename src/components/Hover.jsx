@@ -5,11 +5,11 @@ const Hover = ({icon: Icon, onClick }) => {
 
   return (
     <div
-      className="relative w-16 h-16 rounded-full bg-gray-300"
+      className="relative h-8 w-8 sm:h-10 sm:w-10 md:w-16 md:h-16 rounded-full bg-gray-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={onClick} 
-      style={{ backgroundColor: isHovered ? '#39DB4A' : '' }}
+      style={{ backgroundColor: isHovered ? 'rgb(231, 147, 21)' : '' }}
     >
       <Icon
         size={24}

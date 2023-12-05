@@ -9,7 +9,7 @@ const Address = () => {
         </div>
         <div className="flex items-center rounded-xl shadow-xl p-4 w-full h-[80px] px-2" >
         <img src="/assets/Address/image 16.png" className='w-12 h-12 ml-4' ></img>
-        <div className=" ml-4 font-inter text-2xl font-medium leading-50px tracking-wider">Plot 577, Imaginary Street, Karachi</div>
+        <div className=" ml-4 font-inter text-md sm:text-lg md:text-2xl font-medium leading-50px tracking-wider">Plot 577, Imaginary Street, Karachi</div>
         </div>
         
         </div>
@@ -17,4 +17,4 @@ const Address = () => {
   )
 }
 
-export default Address
+export default Address;
