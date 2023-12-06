@@ -6,8 +6,8 @@ const useOneSignal = () => {
   const appId = env.ONE_SIGNAL_APP_ID;
 
   useEffect(() => {
+    console.log("Init OneSignal ", appId);
     if (appId) {
-      console.log("Init OneSignal ", appId);
       OneSignal.init({ appId: appId, allowLocalhostAsSecureOrigin: true });
     }
   }, [appId]);
