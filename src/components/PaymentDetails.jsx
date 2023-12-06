@@ -7,18 +7,18 @@ const PaymentDetails = () => {
        
       <div className="flex justify-between w-full mb-4">
         <p>Discount</p>
-        <p className=' text-purple-800'>20%</p>
+        <p className=' text-primary'>20%</p>
       </div>
       <div className="flex justify-between w-full mb-4">
         <p>Total Price</p>
-        <p className=' text-purple-800'>Rs.2000</p>
+        <p className=' text-primary'>Rs.2000</p>
       </div>
       <div className="flex justify-between w-full mb-4">
         <p>Delivery Time</p>
-        <p className=' text-purple-800'>1 Hour</p>
+        <p className=' text-primary'>1 Hour</p>
       </div>
     </div>
   )
 }
 
-export default PaymentDetails
+export default PaymentDetails;
