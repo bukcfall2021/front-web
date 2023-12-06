@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import img5 from "/assets/Pizzas/pizza2.png";
 import { FaStar } from "react-icons/fa";
 import ExtrasCard from "../ExtrasCard";

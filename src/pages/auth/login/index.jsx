@@ -57,9 +57,7 @@ const LoginPage = () => {
 
           <div className="flex gap-2 pt-3">
             <input type="checkbox" id="remember" className="checked:accent-primary" />
-            <label for="remember" className="text-sm text-[#696F79] ">
-              Remember me
-            </label>
+            <label className="text-sm text-[#696F79] ">Remember me</label>
           </div>
           <button className="rounded font-inter p-2 text-center w-full mt-4 bg-primary text-white">
             Log in

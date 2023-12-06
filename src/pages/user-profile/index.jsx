@@ -22,13 +22,11 @@ const UserProfilePage = () => {
         <InputField title={"Phone number"} placeholder={"Enter your phone number"} />
       </div>
 
-      <label for="email" className="text-sm py-2  font-inter text-[#696F79]">
-        Address
-      </label>
+      <label className="text-sm py-2  font-inter text-[#696F79]">Address</label>
       <textarea
         id="message"
         rows="4"
-        class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 outline-none"
+        className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 outline-none"
         placeholder="Plot no, block, karachi"
       ></textarea>
     </div>

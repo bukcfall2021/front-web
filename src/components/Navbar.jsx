@@ -24,7 +24,6 @@ const options = [
 
 const Navbar = ({ isCartOpen, setIsCartOpen }) => {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-
   const location = useLocation();
 
   return (
@@ -32,7 +31,9 @@ const Navbar = ({ isCartOpen, setIsCartOpen }) => {
       <nav className="">
         <div className="flex flex-wrap items-center justify-between mx-auto py-3">
           <div className="flex items-center space-x-3">
-            <img src={LogoImage} className="h-10 md:h-12" alt="logo" />
+            <Link to={RouteNames.HOME}>
+              <img src={LogoImage} className="h-10 md:h-12" alt="logo" />
+            </Link>
           </div>
 
           <div className="flex md:order-2 gap-x-1 md:gap-x-2 md:space-x-0 items-center">
